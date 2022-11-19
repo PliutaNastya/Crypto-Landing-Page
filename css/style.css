@@ -646,6 +646,21 @@ h6 {
   border-radius: 50%;
   right: -93px;
   top: 53px;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.main-block__images._active {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.8s ease 0.6s;
+  -o-transition: all 0.8s ease 0.6s;
+  transition: all 0.8s ease 0.6s;
 }
 
 .main-block__img_main {
@@ -763,6 +778,8 @@ h6 {
 }
 
 .main-block__img_arrow {
+  -webkit-animation: move-chevron 3s ease-out 0.2s infinite;
+          animation: move-chevron 3s ease-out 0.2s infinite;
   position: absolute;
   top: 60%;
   left: 45%;
@@ -773,6 +790,8 @@ h6 {
 }
 
 .main-block__img_arrow-2 {
+  -webkit-animation: move-chevron 3s ease-out 0.4s infinite;
+          animation: move-chevron 3s ease-out 0.4s infinite;
   position: absolute;
   top: 63%;
   left: 45%;
@@ -780,6 +799,34 @@ h6 {
 
 .main-block__img_arrow-2 img {
   width: 27px;
+}
+
+@-webkit-keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .earn-yield__container {
@@ -1290,6 +1337,10 @@ h6 {
   color: #2AA915;
 }
 
+.upcoming-pools .item-start-earning__icon img {
+  border-radius: 50%;
+}
+
 .companies__title {
   text-align: center;
   -webkit-transform: translate(0px, 50%);
@@ -1773,6 +1824,22 @@ h6 {
     font-size: 1.25rem;
   }
 
+  .farm .item-start-earning__icon img {
+    width: 6.125rem;
+  }
+
+  .farm .item-start-earning__icon img {
+    height: 3.875rem;
+  }
+
+  .upcoming-pools .item-start-earning__icon img {
+    width: 6.25rem;
+  }
+
+  .upcoming-pools .item-start-earning__icon img {
+    height: 6.25rem;
+  }
+
   .companies__title {
     margin-bottom: 5rem;
   }
@@ -2084,6 +2151,22 @@ h6 {
 
   .item-start-earning__value {
     font-size: 1.125rem;
+  }
+
+  .farm .item-start-earning__icon img {
+    width: 3.75rem;
+  }
+
+  .farm .item-start-earning__icon img {
+    height: 2.375rem;
+  }
+
+  .upcoming-pools .item-start-earning__icon img {
+    width: 3.75rem;
+  }
+
+  .upcoming-pools .item-start-earning__icon img {
+    height: 3.75rem;
   }
 
   .companies__title {
@@ -2496,11 +2579,11 @@ h6 {
 
 @media (max-width: 29.99875em) {
   .main-block__img_arrow {
-    left: 51% !important;
+    left: 50% !important;
   }
 
   .main-block__img_arrow-2 {
-    left: 51% !important;
+    left: 50% !important;
   }
 
   .info__body {
@@ -3392,6 +3475,54 @@ h6 {
 @supports not (font-size: clamp( 1.125rem , 1.0773809524rem  +  0.2380952381vw , 1.25rem )) {
     .item-start-earning__value {
       font-size: calc(1.125rem + 0.125 * (100vw - 20rem) / 52.5);
+    }
+}
+
+@supports (width: clamp( 3.75rem , 2.8452380952rem  +  4.5238095238vw , 6.125rem )) {
+    .farm .item-start-earning__icon img {
+      width: clamp( 3.75rem , 2.8452380952rem  +  4.5238095238vw , 6.125rem );
+    }
+}
+
+@supports not (width: clamp( 3.75rem , 2.8452380952rem  +  4.5238095238vw , 6.125rem )) {
+    .farm .item-start-earning__icon img {
+      width: calc(3.75rem + 2.375 * (100vw - 20rem) / 52.5);
+    }
+}
+
+@supports (height: clamp( 2.375rem , 1.8035714286rem  +  2.8571428571vw , 3.875rem )) {
+    .farm .item-start-earning__icon img {
+      height: clamp( 2.375rem , 1.8035714286rem  +  2.8571428571vw , 3.875rem );
+    }
+}
+
+@supports not (height: clamp( 2.375rem , 1.8035714286rem  +  2.8571428571vw , 3.875rem )) {
+    .farm .item-start-earning__icon img {
+      height: calc(2.375rem + 1.5 * (100vw - 20rem) / 52.5);
+    }
+}
+
+@supports (width: clamp( 3.75rem , 2.7976190476rem  +  4.7619047619vw , 6.25rem )) {
+    .upcoming-pools .item-start-earning__icon img {
+      width: clamp( 3.75rem , 2.7976190476rem  +  4.7619047619vw , 6.25rem );
+    }
+}
+
+@supports not (width: clamp( 3.75rem , 2.7976190476rem  +  4.7619047619vw , 6.25rem )) {
+    .upcoming-pools .item-start-earning__icon img {
+      width: calc(3.75rem + 2.5 * (100vw - 20rem) / 52.5);
+    }
+}
+
+@supports (height: clamp( 3.75rem , 2.7976190476rem  +  4.7619047619vw , 6.25rem )) {
+    .upcoming-pools .item-start-earning__icon img {
+      height: clamp( 3.75rem , 2.7976190476rem  +  4.7619047619vw , 6.25rem );
+    }
+}
+
+@supports not (height: clamp( 3.75rem , 2.7976190476rem  +  4.7619047619vw , 6.25rem )) {
+    .upcoming-pools .item-start-earning__icon img {
+      height: calc(3.75rem + 2.5 * (100vw - 20rem) / 52.5);
     }
 }
 
