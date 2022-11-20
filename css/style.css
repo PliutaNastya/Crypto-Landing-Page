@@ -151,7 +151,7 @@ h6 {
   background: rgba(42, 169, 21, 0.18);
   border-radius: 8px;
   font-size: 1rem;
-  padding: 8px 10px;
+  padding: 8px 10px !important;
   color: #2AA915;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -590,18 +590,22 @@ h6 {
   -webkit-transform: translate(-200%, 0px);
       -ms-transform: translate(-200%, 0px);
           transform: translate(-200%, 0px);
-  -webkit-transition: all 0.8s ease 0s;
-  -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  -webkit-transition: -webkit-transform 0.8s ease 0s !important;
+  transition: -webkit-transform 0.8s ease 0s !important;
+  -o-transition: transform 0.8s ease 0s !important;
+  transition: transform 0.8s ease 0s !important;
+  transition: transform 0.8s ease 0s, -webkit-transform 0.8s ease 0s !important;
 }
 
 .main-block__button._active {
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-  -webkit-transition: all 0.8s ease 0.4s;
-  -o-transition: all 0.8s ease 0.4s;
-  transition: all 0.8s ease 0.4s;
+  -webkit-transition: -webkit-transform 0.8s ease 0.4s !important;
+  transition: -webkit-transform 0.8s ease 0.4s !important;
+  -o-transition: transform 0.8s ease 0.4s !important;
+  transition: transform 0.8s ease 0.4s !important;
+  transition: transform 0.8s ease 0.4s, -webkit-transform 0.8s ease 0.4s !important;
 }
 
 .main-block__image {
@@ -3720,7 +3724,7 @@ h6 {
   .button_pink:hover {
     background: -o-linear-gradient(355.96deg, #d6169d 1.24%, #f397d7 98.27%) !important;
     background: linear-gradient(94.04deg, #d6169d 1.24%, #f397d7 98.27%) !important;
-    color: #fff;
+    color: #fff !important;
   }
 
   .button_light-green:hover {
